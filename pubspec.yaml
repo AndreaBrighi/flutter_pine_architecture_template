@@ -43,11 +43,12 @@ dependencies:
   provider: ^6.1.2
   equatable: ^2.0.5
   dio: ^5.4.3+1
+  fluro: ^2.0.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  retrofit_generator: '>=7.0.0 <8.0.0'   # required dart >=2.19
+  retrofit_generator: ^8.1.0   # required dart >=2.19
   build_runner: '>=2.3.0 <4.0.0'
   json_serializable: ^6.6.2
   # The "flutter_lints" package below contains a set of recommended lints to
@@ -55,7 +56,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  flutter_lints: ^4.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
