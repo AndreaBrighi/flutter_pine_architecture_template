@@ -1,4 +1,4 @@
-# poi_app
+# App
 
 A new Flutter project.
 
