@@ -4,7 +4,7 @@ abstract class TestEvent extends Equatable {
   const TestEvent();
 }
 
-class FetchTestEvent extends TestEvent {
+class Click extends TestEvent {
   @override
   List<Object> get props => [];
 }

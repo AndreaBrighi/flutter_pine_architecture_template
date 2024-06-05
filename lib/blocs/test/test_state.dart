@@ -4,16 +4,16 @@ abstract class TestState extends Equatable {
   const TestState();
 }
 
-class FetchingTestState extends TestState {
+class WaitForClick extends TestState {
   @override
   List<Object> get props => [];
 }
 
-class FetchedTestState extends TestState {
-  final Test test;
+class Clicked extends TestState {
+  final int clicks;
 
-  const FetchedTestState(this.test);
+  const Clicked(this.clicks);
 
   @override
-  List<Object> get props => [test];
+  List<Object> get props => [clicks];
 }
