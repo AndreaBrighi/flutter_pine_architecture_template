@@ -2,7 +2,7 @@
 
 A new Flutter project.
 
-## Getting Started
+## Compile
 
 This project is a starting point for a Flutter application.
 Build retrofit 
@@ -10,6 +10,15 @@ Build retrofit
 ```shell
 flutter pub run build_runner build
 ```
+
+## Update project
+
+```shell
+flutter pub outdated
+
+flutter pub upgrade --major-versions
+```
+
 
 A few resources to get you started if this is your first Flutter project:
 
