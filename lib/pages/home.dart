@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:poi_app/blocs/test/test_bloc.dart';
-import 'package:poi_app/router/routes.dart';
-import 'package:poi_app/widgets/click_counter_widget.dart';
+import '../../blocs/test/test_bloc.dart';
+import '../../router/routes.dart';
+import '../../widgets/click_counter_widget.dart';
 
 class HomePage extends StatelessWidget {
   final String username;

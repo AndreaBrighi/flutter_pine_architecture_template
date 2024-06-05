@@ -2,9 +2,9 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pine/pine.dart';
-import 'package:poi_app/model/test.dart';
-import 'package:poi_app/repository/mapper/test_mapper.dart';
-import 'package:poi_app/services/responses/test_dto.dart';
+import '../model/test.dart';
+import '../repository/mapper/test_mapper.dart';
+import '../services/responses/test_dto.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
