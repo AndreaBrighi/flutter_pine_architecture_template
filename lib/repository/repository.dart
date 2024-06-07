@@ -1,5 +1,5 @@
 import 'package:pine/pine.dart';
-import 'package:poi_app/services/responses/test_dto.dart';
+import '../services/responses/test_dto.dart';
 import '../model/test.dart';
 import '../services/new_service.dart';
 
