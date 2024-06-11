@@ -1,6 +1,6 @@
 
 import 'package:dio/dio.dart';
-import 'package:poi_app/services/responses/test_dto.dart';
+import '../services/responses/test_dto.dart';
 import 'package:retrofit/retrofit.dart' as retrofit;
 
 part 'new_service.g.dart';
