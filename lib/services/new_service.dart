@@ -11,7 +11,7 @@ abstract class NewService {
       _NewService(dio, baseUrl: baseUrl);
 
   @retrofit.GET('')
-  @retrofit.Headers({'Authorization': 'Bearer <token>'})
+  //@retrofit.Headers({'Authorization': 'Bearer <token>'})
   Future<TestDTO> test(/*{
     @retrofit.Query('q') String query = 'italy',
   }*/);
