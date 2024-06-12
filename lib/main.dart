@@ -1,8 +1,11 @@
+import 'package:provider/provider.dart';
+
+import 'provider/localeProvider.dart';
 import 'themes/theme_style.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'languages/l10n/l10n.dart';
 import 'di/dependency_injector.dart';
 import 'router/routes.dart';
 
@@ -19,24 +22,28 @@ class MyApp extends StatelessWidget {
     final router = FluroRouter();
     Routes.configureRoutes(router);
     return DependencyInjector(
-      child:MaterialApp(
-        title: 'Flutter Demo',
-        theme: LightTheme.make,
-        darkTheme: DarkTheme.make,
-        // Initial Page set to Login Page 
-        initialRoute: 'login',
-        // Use the generator provided by Fluro package
-        onGenerateRoute: router.generator,
-        localizationsDelegates: const [
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        supportedLocales: const [
-          Locale('en'),
-          Locale('it'),
-        ],
-      )
+      child: ChangeNotifierProvider(
+      create: (context) => LocaleProvider(),
+      builder: (context, state) {
+        final provider = Provider.of<LocaleProvider>(context);
+        return MaterialApp(
+          title: 'Flutter Demo',
+          theme: LightTheme.make,
+          darkTheme: DarkTheme.make,
+          // Initial Page set to Login Page 
+          initialRoute: 'login',
+          // Use the generator provided by Fluro package
+          onGenerateRoute: router.generator,
+          supportedLocales: L10n.all,
+            locale: provider.locale,
+            localizationsDelegates: [
+              AppLocalizations.delegate,
+              AppLocalizations.localizationsDelegates[1],
+              AppLocalizations.localizationsDelegates[2],
+              AppLocalizations.localizationsDelegates[3],
+            ],
+        );
+      })
     );
   }
 }

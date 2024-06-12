@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
+
+import '../provider/localeProvider.dart';
+import 'custom_drop_down.dart';
+
 
 class ClickCounterWidget extends StatelessWidget {
   final String message;
@@ -9,13 +15,14 @@ class ClickCounterWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return ListView( 
-              children:[ 
+    final provider=Provider.of<LocaleProvider>(context);
+    return ListView(
+              children:[
+                CustomDropDownWidget(provider: provider),
                 Center(child: Text(message)),
                 TextButton(
                   onPressed: onClick,
-                  child: const Text("Click me"),
+                  child: Text(AppLocalizations.of(context)!.click),
                 )
               ]);
   }
