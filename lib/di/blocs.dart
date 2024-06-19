@@ -7,4 +7,7 @@ final List<BlocProvider> _blocs = [
       newRepository: context.read(),
     ),
   ),
+  BlocProvider<LocaleCubit>(
+    create: (_) => LocaleCubit(),
+  ),
 ];

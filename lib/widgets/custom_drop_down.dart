@@ -2,18 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../languages/l10n/l10n.dart';
-import '../provider/localeProvider.dart';
+import '../locale/cubits/locale_cubit.dart';
 
 class CustomDropDownWidget extends StatelessWidget {
   const CustomDropDownWidget({
     super.key,
-    required this.provider,
   });
-
-  final LocaleProvider provider;
 
   @override
   Widget build(BuildContext context) {
+    final provider = context.watch<LocaleCubit>();
     return Center(
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -25,7 +23,7 @@ class CustomDropDownWidget extends StatelessWidget {
 
             // value: const Locale("en"),
 
-            value: provider.locale ?? const Locale("en"),
+            value: provider.state.locale ?? const Locale("en"),
 
             items: L10n.all.map<DropdownMenuItem<Locale>>((value) {
               return DropdownMenuItem<Locale>(
@@ -35,8 +33,6 @@ class CustomDropDownWidget extends StatelessWidget {
                   style: const TextStyle(color: Colors.blue),
                 ),
                 onTap: () {
-                  final provider =
-                      Provider.of<LocaleProvider>(context, listen: false);
                   provider.setLocale(value);
                 },
               );

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:provider/provider.dart';
 
-import '../provider/localeProvider.dart';
 import 'custom_drop_down.dart';
 
 
@@ -15,10 +13,9 @@ class ClickCounterWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final provider=Provider.of<LocaleProvider>(context);
     return ListView(
               children:[
-                CustomDropDownWidget(provider: provider),
+                const CustomDropDownWidget(),
                 Center(child: Text(message)),
                 TextButton(
                   onPressed: onClick,
